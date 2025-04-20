@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Visualization Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Data Visualization Dashboard</h1>
+
+    <div class="filters">
+        <label for="end_year">End Year:</label>
+        <input type="number" id="end_year" class="filter" placeholder="Filter by End Year">
+        <label for="topic">Topics:</label>
+        <input type="text" id="topic" class="filter" placeholder="Filter by Topics">
+        <label for="sector">Sector:</label>
+        <select id="sector" class="filter">
+            <option value="">All Sectors</option>
+            <option value="Energy">Energy</option>
+            <option value="Automotive">Automotive</option>
+            <!-- Add more options as needed -->
+        </select>
+        <label for="region">Region:</label>
+        <select id="region" class="filter">
+            <option value="">All Regions</option>
+            <option value="Northern America">Northern America</option>
+            <option value="Europe">Europe</option>
+            <!-- Add more options as needed -->
+        </select>
+        <label for="pestle">PEST:</label>
+        <select id="pestle" class="filter">
+            <option value="">All PEST</option>
+            <option value="Political">Political</option>
+            <option value="Economic">Economic</option>
+            <option value="Social">Social</option>
+            <option value="Technological">Technological</option>
+            <!-- Add more options as needed -->
+        </select>
+        <label for="source">Source:</label>
+        <select id="source" class="filter">
+            <option value="">All Sources</option>
+            <option value="EIA">EIA</option>
+            <option value="International Banker">International Banker</option>
+            <!-- Add more options as needed -->
+        </select>
+    </div>
+
+    <div id="visualization">
+        <!-- D3.js visualizations will be dynamically added here -->
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>
