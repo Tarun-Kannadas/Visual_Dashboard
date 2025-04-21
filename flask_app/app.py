@@ -1,11 +1,13 @@
 from flask import Flask, jsonify, request, render_template
+import os
 from sqlalchemy import create_engine
 import pandas as pd
 
 app = Flask(__name__)
 
 # Configure SQLAlchemy to connect to PostgreSQL
-engine = create_engine('postgresql://tarun:blackcoffer@localhost/blackcoffer')
+db_url = os.getenv("DATABASE_URL")
+engine = create_engine(db_url)
 
 # Define route to fetch filtered data
 @app.route('/data', methods=['GET'])
